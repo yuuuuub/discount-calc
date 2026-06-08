@@ -17,4 +17,5 @@ jobs:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
         run: |
           npm install -g wrangler@3
+          wrangler pages project create discount-calc --production-branch=main || true
           wrangler pages deploy . --project-name=discount-calc --commit-dirty=true
